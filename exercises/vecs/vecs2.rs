@@ -16,7 +16,7 @@ fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
     }
 
     // At this point, `v` should be equal to [4, 8, 12, 16, 20].
-    v
+    v 
 }
 
 fn vec_map(v: &Vec<i32>) -> Vec<i32> {
@@ -33,17 +33,17 @@ mod tests {
 
     #[test]
     fn test_vec_loop() {
-        let v: Vec<i32> = (1..).filter(|x| x % 2 == 0).take(5).collect();
+        let v: Vec<i32> = (1..).filter(|x| x % 2 == 0).take(5).collect(); // 2 4 6 8 10
         let ans = vec_loop(v.clone());
 
-        assert_eq!(ans, v.iter().map(|x| x * 2).collect::<Vec<i32>>());
+        assert_eq!(ans, v.iter().map(|x| x * 2).collect::<Vec<i32>>()); // 4 8 12 16 20
     }
 
     #[test]
     fn test_vec_map() {
-        let v: Vec<i32> = (1..).filter(|x| x % 2 == 0).take(5).collect();
+        let v: Vec<i32> = (1..).filter(|x| x % 2 == 0).take(5).collect(); // 2 4 6 8 10
         let ans = vec_map(&v);
 
-        assert_eq!(ans, v.iter().map(|x| x * 2).collect::<Vec<i32>>());
+        assert_eq!(ans, v.iter().map(|x| x * 2).collect::<Vec<i32>>()); // 4 8 12 16 20
     }
 }
